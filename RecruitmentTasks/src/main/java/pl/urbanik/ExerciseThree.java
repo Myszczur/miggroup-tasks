@@ -8,9 +8,9 @@ package pl.urbanik;
 
 public class ExerciseThree {
 
-    private static final String FIRST_QUERY = "select * from Country co where 400 < all " +
-            "(select ci.Population from City ci where ci.CountryID = co.CountryID)";
+    private static final String FIRST_QUERY = "SELECT * FROM Country co WHERE 400 < ALL " +
+            "(SELECT ci.Population FROM City ci WHERE ci.CountryID = co.CountryID)";
 
-    private static final String SECOND_QUERY = "select name from Country co where 0 = " +
-            "(select COUNT(1) from City ci JOIN Building b ON B.CityID = CI.CityID WHERE ci.CountryID = co.CountryID)";
+    private static final String SECOND_QUERY = "SELECT name FROM Country co WHERE 0 = " +
+            "(SELECT COUNT(1) FROM City ci JOIN Building b ON B.CityID = ci.CityID WHERE ci.CountryID = co.CountryID)";
 }
