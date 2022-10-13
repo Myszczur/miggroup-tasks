@@ -2,7 +2,6 @@ package pl.urbanik.exercisethree.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.urbanik.exercisethree.models.Country;
 import pl.urbanik.exercisethree.service.CountryService;
