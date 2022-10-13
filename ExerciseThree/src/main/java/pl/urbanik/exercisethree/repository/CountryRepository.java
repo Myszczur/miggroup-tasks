@@ -13,6 +13,6 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
     @Query(value = "SELECT * FROM country WHERE 400 < ALL (SELECT population FROM city WHERE city_id = country_id)", nativeQuery = true)
     List<Country> getAllCountryByPopulation();
 
-    @Query(value = "SELECT name FROM country WHERE 0 = (SELECT COUNT(1) FROM city JOIN building ON city = ci.CityID WHERE ci.CountryID = co.CountryID)", nativeQuery = true)
+    @Query(value = "Select Country.name from Country Where Country.country_id NOT IN (Select DISTINCT Country.country_id from Country AS P Join City AS M on (P.country_id = M.city_id) join buildings AS B on (M.city_id = B.building_id))", nativeQuery = true)
     List<Country> getAllCountryNamesByNoBuildings();
 }

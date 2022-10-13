@@ -14,8 +14,13 @@ public class TaskThreeController {
 
    private final CountryRepository countryRepository;
 
-    @GetMapping("/task")
+    @GetMapping("/get-country")
     public List<Country> getAllCountry() {
         return countryRepository.getAllCountryByPopulation();
+    }
+
+    @GetMapping("/get-all-name-country")
+    public List<Country> getAllCountryWithoutBuildings() {
+        return countryRepository.getAllCountryNamesByNoBuildings();
     }
 }
